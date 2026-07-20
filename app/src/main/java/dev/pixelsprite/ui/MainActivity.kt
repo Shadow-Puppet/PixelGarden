@@ -19,7 +19,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -154,7 +153,7 @@ private fun TopBar(
 }
 
 @Composable
-private fun BarButton(label: String, enabled: Boolean = true, onClick: () -> Unit) {
+private fun BarButton(label: String, onClick: () -> Unit, enabled: Boolean = true) {
     Text(
         label,
         color = if (enabled) Color(0xFFDDDDDD) else Color(0xFF555555),
