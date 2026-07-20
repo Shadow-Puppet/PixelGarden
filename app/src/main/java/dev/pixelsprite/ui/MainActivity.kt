@@ -137,10 +137,10 @@ private fun TopBar(
         Modifier.fillMaxWidth().background(Color(0xFF1A1A1A)).padding(horizontal = 4.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        BarButton("New", onNew)
-        BarButton("Open", onLoad)
-        BarButton("Save", onSave)
-        BarButton("PNG", onExport)
+        BarButton("New") { onNew() }
+        BarButton("Open") { onLoad() }
+        BarButton("Save") { onSave() }
+        BarButton("PNG") { onExport() }
         Spacer(Modifier.weight(1f))
         BarButton(if (s.doc.colorMode == ColorMode.RGBA) "RGBA" else "IDX") {
             s.setColorMode(
@@ -153,7 +153,7 @@ private fun TopBar(
 }
 
 @Composable
-private fun BarButton(label: String, onClick: () -> Unit, enabled: Boolean = true) {
+private fun BarButton(label: String, enabled: Boolean = true, onClick: () -> Unit) {
     Text(
         label,
         color = if (enabled) Color(0xFFDDDDDD) else Color(0xFF555555),
